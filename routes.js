@@ -11,4 +11,7 @@ module.exports = function (app) {
 
     app.route('/registrasi/:id')
         .get(jsonku.getRegistrasi);
+
+    app.route('/registrasi')
+        .post(jsonku.storeRegistrasi);
 }
