@@ -14,4 +14,8 @@ module.exports = function (app) {
 
     app.route('/registrasi')
         .post(jsonku.storeRegistrasi);
-}
+
+    app.route('/registrasi')
+        .put(jsonku.updateRegistrasi);
+
+}       

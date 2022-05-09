@@ -46,3 +46,21 @@ exports.storeRegistrasi = function (req, res) {
         }
     );
 }
+
+exports.updateRegistrasi = function (req, res) {
+    var id = req.body.id_registrasi;
+    var nik = req.body.nik;
+    var nama = req.body.nama;
+    var jnk = req.body.jnk;
+    var alamat = req.body.alamat;
+
+    connection.query("UPDATE registrasi SET nik = ?, nama = ?, jnk = ?, alamat = ? WHERE id = ?", [nik, nama, jnk, alamat, id], 
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok('Berhasil update data', 'Success', res);
+            }
+        }
+    );
+}
